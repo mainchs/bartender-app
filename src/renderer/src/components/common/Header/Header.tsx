@@ -6,14 +6,18 @@ const mockProfile = {
   email: 'joohee0831@gmail.com',
 };
 
+const mockTitle = '홈';
+
 interface HeaderProps {
   name?: string;
   email?: string;
+  title?: string;
 }
 
 const Header = ({
   name = mockProfile.name,
   email = mockProfile.email,
+  title = mockTitle,
 }: HeaderProps = {}) => {
   return (
     <header className={styles.header}>
@@ -29,7 +33,7 @@ const Header = ({
       </section>
 
       <section className={styles.headerTitle}>
-        <h1>Hello, Jazzy Bartender</h1>
+        <h1>{title}</h1>
       </section>
     </header>
   );
