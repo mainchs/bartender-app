@@ -1,0 +1,45 @@
+.profileSection {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: black;
+  border: 1px solid #2f333a;
+  overflow: hidden;
+  position: relative;
+}
+
+.profileImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileInfo {
+  font-style: normal;
+}
+
+.profileName {
+  color: white;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.profileEmail {
+  color: #8D929A;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
