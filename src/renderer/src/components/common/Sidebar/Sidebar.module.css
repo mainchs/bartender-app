@@ -2,26 +2,139 @@
   width: 200px;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #d4d4d4;
-  padding: 10px 0;
+  border-right: 1px solid #5f646d;
   background-color: #121417;
+  height: 100vh;
+}
+
+.profileSection {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #5f646d;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: black;
+  border: 1px solid #2f333a;
+  overflow: hidden;
+  position: relative;
+}
+
+.profileImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileInfo {
+  font-style: normal;
+}
+
+.profileName {
+  color: white;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.profileEmail {
+  color: #8D929A;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .nav {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .navButton {
   background: none;
   border: none;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 20px;
   text-align: left;
   cursor: pointer;
   font-size: 16px;
   font-weight: 400;
   width: 100%;
   height: 40px;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.navButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatFolders {
+  flex: 1;
+}
+
+.folder {
+  margin-bottom: 10px;
+}
+
+.folderName {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px 40px;
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+  gap: 8px;
+}
+
+.folderIcon {
+  font-size: 12px;
+  color: #8d929a;
+  transition: transform 0.2s ease;
+  margin-left: -20px;
+}
+
+.folderIcon.folderOpen {
+  transform: rotate(0deg);
+}
+
+.folderName:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.folderItems {
+  opacity: 1;
+  max-height: 500px;
+  transition: opacity 0.2s ease, max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.chatItem {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px 60px;
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.chatItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 

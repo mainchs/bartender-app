@@ -1,5 +1,7 @@
+import ChatInterface from '../components/ChatInterface/ChatInterface';
+
 const ChatPage = () => {
-  return <div>Chat Page</div>;
+  return <ChatInterface title="홈" />;
 };
 
 export default ChatPage;

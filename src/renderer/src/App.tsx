@@ -48,7 +48,6 @@ function App(): React.JSX.Element {
     <AppLayout
       currentRoute={currentRoute}
       onNavigate={navigate}
-      title={getPageTitle(currentRoute)}
     >
       {renderPage()}
     </AppLayout>

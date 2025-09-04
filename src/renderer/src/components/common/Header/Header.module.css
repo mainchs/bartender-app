@@ -5,25 +5,7 @@
   align-items: center;
   border-bottom: 1px solid #8D929A;
   background-color: #121417;
-}
-
-.profileSection {
-  width: 200px;
-  display: flex;
-  padding: 10px 17px 10px 10px;
-  align-items: center;
-  gap: 10px;
-}
-
-.profileImage img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.profileInfo {
-  font-style: normal;
+  padding: 0 20px;
 }
 
 .headerTitle h1 {
@@ -31,22 +13,5 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
-  margin-left: 10px;
-}
-
-.profileName {
-  color: white;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.profileEmail {
-  color: #8D929A;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
   line-height: normal;
 }
