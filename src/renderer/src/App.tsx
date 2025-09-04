@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import Header from './components/common/Header/Header';
-import Sidebar from './components/common/Sidebar/Sidebar';
+import AppLayout from './components/common/AppLayout';
 import MainPage from './pages/MainPage';
 import ChatPage from './pages/ChatPage';
 import ConnectPage from './pages/ConnectPage';
@@ -13,6 +12,21 @@ function App(): React.JSX.Element {
 
   const navigate = (route: Route) => {
     setCurrentRoute(route);
+  };
+
+  const getPageTitle = (route: Route) => {
+    switch (route) {
+      case 'main':
+        return '홈';
+      case 'chat':
+        return '채팅';
+      case 'connect':
+        return '앱 연결';
+      case 'task':
+        return '할 일';
+      default:
+        return '홈';
+    }
   };
 
   const renderPage = () => {
@@ -31,13 +45,13 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <div className="app">
-      <Header />
-      <div className="app-body">
-        <Sidebar currentRoute={currentRoute} onNavigate={navigate} />
-        <main className="main-content">{renderPage()}</main>
-      </div>
-    </div>
+    <AppLayout
+      currentRoute={currentRoute}
+      onNavigate={navigate}
+      title={getPageTitle(currentRoute)}
+    >
+      {renderPage()}
+    </AppLayout>
   );
 }
 
