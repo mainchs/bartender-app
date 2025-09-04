@@ -192,3 +192,91 @@
 .chatArea::-webkit-scrollbar-thumb:hover {
   background: #8d929a;
 }
+
+.messagesView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  scroll-behavior: smooth;
+}
+
+.message {
+  font-size: 10px;
+  font-family: 'Pretendard', sans-serif;
+  line-height: 1.5;
+  max-width: 70%;
+}
+
+.userMessage {
+  background-color: #000000;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin-left: auto;
+  text-align: right;
+}
+
+.assistantMessage {
+  color: white;
+  margin-right: auto;
+  text-align: left;
+}
+
+.fixedInputContainer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.typingIndicator {
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.typingDots {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.typingDots span {
+  width: 4px;
+  height: 4px;
+  background-color: #8d929a;
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typingDots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typingDots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typingDots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
