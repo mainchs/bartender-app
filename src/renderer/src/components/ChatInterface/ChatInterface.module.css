@@ -24,27 +24,49 @@
 
 .chatArea {
   flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   padding: 20px;
-  overflow-y: auto;
 }
 
+.welcomeMessage {
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Pretendard', sans-serif;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 31px;
+  margin-top: 150px;
+}
 
 .inputContainer {
-  padding: 20px;
-  padding-top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.inputContainer form {
+  pointer-events: auto;
 }
 
 .inputWrapper {
   background-color: #2f333a;
   border: 0.583px solid #5f646d;
   border-radius: 7px;
-  padding: 9.33px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  width: 560px;
+  height: 60px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
 .inputActions {
+  position: absolute;
+  left: 10px;
+  top: 34px;
   display: flex;
   align-items: center;
   gap: 4.67px;
@@ -52,20 +74,21 @@
 
 .attachButton {
   background: none;
-  border: none;
   color: white;
   padding: 0;
   cursor: pointer;
-  width: 16.33px;
-  height: 16.33px;
+  width: 16px;
+  height: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 0.583px solid #5f646d;
+  border-radius: 4.67px;
 }
 
 .attachButton svg {
-  width: 100%;
-  height: 100%;
+  width: 5.83px;
+  height: 5.83px;
 }
 
 .tags {
@@ -77,25 +100,53 @@
   background-color: #2f333a;
   border: 0.583px solid #5f646d;
   border-radius: 4.67px;
-  padding: 0 5.25px;
-  height: 16.33px;
+  padding: 0 5px;
+  height: 16px;
   display: flex;
   align-items: center;
+  gap: 3px;
   color: white;
-  font-size: 6.417px;
+  font-size: 6px;
   font-weight: 500;
   font-family: 'Pretendard', sans-serif;
   white-space: nowrap;
 }
 
+.tag svg {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+}
+
+.addButton {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+  cursor: pointer;
+  width: 6px;
+  height: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addButton svg {
+  width: 100%;
+  height: 100%;
+}
+
 .textInput {
+  position: absolute;
+  left: 10px;
+  top: 10px;
   background: transparent;
   border: none;
   color: #b5bac2;
-  font-size: 9.33px;
+  font-size: 10px;
   font-family: 'Pretendard', sans-serif;
   outline: none;
-  width: 100%;
+  width: calc(100% - 20px);
 }
 
 .textInput::placeholder {
@@ -104,23 +155,24 @@
 
 .sendButton {
   position: absolute;
-  right: 20px;
-  bottom: 32px;
-  background: none;
-  border: none;
-  color: white;
+  right: 10px;
+  top: calc(50% + 12px);
+  transform: translateY(-50%);
+  background: #990F0F;
   padding: 0;
   cursor: pointer;
-  width: 16.33px;
-  height: 16.33px;
+  width: 16px;
+  height: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 0.583px solid #5f646d;
+  border-radius: 4.67px;
 }
 
 .sendButton svg {
-  width: 100%;
-  height: 100%;
+  width: 6px;
+  height: 7px;
 }
 
 /* Scrollbar styling */
