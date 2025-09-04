@@ -1,3 +1,5 @@
+import styles from './Sidebar.module.css';
+
 type Route = 'main' | 'chat' | 'connect' | 'task';
 
 interface SidebarProps {
@@ -7,31 +9,39 @@ interface SidebarProps {
 
 const Sidebar = ({ currentRoute, onNavigate }: SidebarProps) => {
   return (
-    <aside className="sidebar">
-      <nav className="sidebar-nav">
-        <button 
-          className={currentRoute === 'main' ? 'active' : ''} 
+    <aside className={styles.sidebar}>
+      <nav className={styles.nav}>
+        <button
+          className={`${styles.navButton} ${
+            currentRoute === 'main' ? styles.active : ''
+          }`}
           onClick={() => onNavigate('main')}
         >
-          Main
+          홈
         </button>
-        <button 
-          className={currentRoute === 'chat' ? 'active' : ''} 
-          onClick={() => onNavigate('chat')}
-        >
-          Chat
-        </button>
-        <button 
-          className={currentRoute === 'connect' ? 'active' : ''} 
-          onClick={() => onNavigate('connect')}
-        >
-          Connect
-        </button>
-        <button 
-          className={currentRoute === 'task' ? 'active' : ''} 
+        <button
+          className={`${styles.navButton} ${
+            currentRoute === 'task' ? styles.active : ''
+          }`}
           onClick={() => onNavigate('task')}
         >
-          Task
+          할 일
+        </button>
+        <button
+          className={`${styles.navButton} ${
+            currentRoute === 'connect' ? styles.active : ''
+          }`}
+          onClick={() => onNavigate('connect')}
+        >
+          앱 연결
+        </button>
+        <button
+          className={`${styles.navButton} ${
+            currentRoute === 'chat' ? styles.active : ''
+          }`}
+          onClick={() => onNavigate('chat')}
+        >
+          채팅
         </button>
       </nav>
     </aside>
