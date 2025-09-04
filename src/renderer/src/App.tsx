@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AppLayout from './components/common/AppLayout';
+import AppLayout from './components/common/AppLayout/AppLayout';
 import MainPage from './pages/MainPage';
 import ChatPage from './pages/ChatPage';
 import ConnectPage from './pages/ConnectPage';
