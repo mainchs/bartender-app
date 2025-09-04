@@ -12,22 +12,22 @@ export default tseslint.config(
   {
     settings: {
       react: {
-        version: 'detect'
-      }
-    }
+        version: 'detect',
+      },
+    },
   },
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
       'react-hooks': eslintPluginReactHooks,
-      'react-refresh': eslintPluginReactRefresh
+      'react-refresh': eslintPluginReactRefresh,
     },
     rules: {
       ...eslintPluginReactHooks.configs.recommended.rules,
       ...eslintPluginReactRefresh.configs.vite.rules,
       '@typescript-eslint/explicit-function-return-type': 'off',
-      semi: ['error', 'always']
-    }
+      semi: ['error', 'always'],
+    },
   },
   eslintConfigPrettier
 );

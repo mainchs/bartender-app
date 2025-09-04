@@ -1,35 +1,57 @@
-import Versions from './components/Versions'
-import electronLogo from './assets/electron.svg'
+import { useState } from 'react';
+import AppLayout from './components/common/AppLayout';
+import MainPage from './pages/MainPage';
+import ChatPage from './pages/ChatPage';
+import ConnectPage from './pages/ConnectPage';
+import TaskPage from './pages/TaskPage';
+
+type Route = 'main' | 'chat' | 'connect' | 'task';
 
 function App(): React.JSX.Element {
-  const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
+  const [currentRoute, setCurrentRoute] = useState<Route>('main');
+
+  const navigate = (route: Route) => {
+    setCurrentRoute(route);
+  };
+
+  const getPageTitle = (route: Route) => {
+    switch (route) {
+      case 'main':
+        return '홈';
+      case 'chat':
+        return '채팅';
+      case 'connect':
+        return '앱 연결';
+      case 'task':
+        return '할 일';
+      default:
+        return '홈';
+    }
+  };
+
+  const renderPage = () => {
+    switch (currentRoute) {
+      case 'main':
+        return <MainPage />;
+      case 'chat':
+        return <ChatPage />;
+      case 'connect':
+        return <ConnectPage />;
+      case 'task':
+        return <TaskPage />;
+      default:
+        return <MainPage />;
+    }
+  };
 
   return (
-    <>
-      <img alt="logo" className="logo" src={electronLogo} />
-      <div className="creator">Powered by electron-vite</div>
-      <div className="text">
-        Build an Electron app with <span className="react">React</span>
-        &nbsp;and <span className="ts">TypeScript</span>
-      </div>
-      <p className="tip">
-        Please try pressing <code>F12</code> to open the devTool
-      </p>
-      <div className="actions">
-        <div className="action">
-          <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">
-            Documentation
-          </a>
-        </div>
-        <div className="action">
-          <a target="_blank" rel="noreferrer" onClick={ipcHandle}>
-            Send IPC
-          </a>
-        </div>
-      </div>
-      <Versions></Versions>
-    </>
-  )
+    <AppLayout
+      currentRoute={currentRoute}
+      onNavigate={navigate}
+    >
+      {renderPage()}
+    </AppLayout>
+  );
 }
 
-export default App
+export default App;
