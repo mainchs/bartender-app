@@ -1,0 +1,21 @@
+.message {
+  font-size: 10px;
+  font-family: 'Pretendard', sans-serif;
+  line-height: 1.5;
+  max-width: 70%;
+}
+
+.userMessage {
+  background-color: #000000;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin-left: auto;
+  text-align: right;
+}
+
+.assistantMessage {
+  color: white;
+  margin-right: auto;
+  text-align: left;
+}

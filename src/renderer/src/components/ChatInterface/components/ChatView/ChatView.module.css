@@ -1,0 +1,22 @@
+.messagesView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  scroll-behavior: smooth;
+}
+
+.fixedInputContainer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
