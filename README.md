@@ -32,3 +32,6 @@ $ pnpm build:mac
 # For Linux
 $ pnpm build:linux
 ```
+
+이거 망함 ㅈㅈ
+디자인하고 다시 옵니다 GG
